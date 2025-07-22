@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{ /*7 propriedades mínimas*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body { /*5 propriedades mínimas*/
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: aliceblue;
+}
+
+/*=====Proporções do CABEÇALHO=====*/
+
+header{ /*12 propriedades mínimas*/
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    margin-top: 20px;
+    padding: 1rem 9%;
+    top: 0;
+    left: 0;
+    filter: drop-shadow(10px);
+    z-index: 100;
+}
+
+.logo { /*6 propreiedades mínimas*/
+    font-size: 3rem;
+    font-weight: 800;
+    color: aqua;
+    transition: 0.9s ease;
+    cursor: pointer;
+    text-shadow: 0 0 30px aqua;
+}
+
+.logo:hover{
+    transform: scale(1.2);
+}
+
+
+
+.icons {
+    display: inline-flex;
+    cursor: pointer;
+    font-size: 2.5rem;
+    width: 100%;
+    align-items: end;
+    flex-direction: row;
+    justify-content: end;
+}
+
+/* Fechar o menu ao clicar em qualquer link */
+
+#check {
+    display: none;
+}
+
+#close-icon {
+    display: none;
+}
+
+/* Estilo quando o menu está fechado */
+#check:not(:checked) ~ .icons #menu-icon {
+    display: block;
+}
+
+#check:not(:checked) ~ .icons #close-icon {
+    display: none;
+}
+
+/* Estilo quando o menu está aberto */
+#check:checked ~ .icons #menu-icon {
+    display: none;
+}
+
+#check:checked ~ .icons #close-icon {
+    display: block;
+}
+
+.navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    padding: 2rem 0;
+    transition: 0.3s;
+    z-index: 99;
+}
+
+#check:checked ~ .navbar {
+    display: flex;
+}
+
+.navbar a {
+    display: block;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
+
+
+
+
+
+/*ESTILIZAR LINKS DO NAV*/
+
+nav a {
+    color: aliceblue;
+    font-size: 1.8rem;
+    margin-left: 4rem;
+    transition: 0.5s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: aqua;
+    border-bottom: 3px solid aqua;
+}
+
+/*=====TORNAR RESPONSÍVEL=====*/
+
+@media (max-width: 995px) {
+    header {
+        padding: 1rem 5%; /* Reduz a margem de padding */
+    }
+    
+    .logo {
+        font-size: 2.5rem; /* Diminui o tamanho da fonte */
+    }
+    
+    nav a {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte dos links */
+        margin-left: 2rem; /* Menor espaçamento entre os links */
+    }
+}
+
+/* Ajustes para telas menores que 768px */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Coloca elementos em coluna */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        padding: 2rem 0;
+        transition: 0.8s ease;
+        z-index: 99;
+    }
+    #check:checked ~ nav {
+        display: flex;
+    }
+
+    nav a {
+        display: block; /* Links em bloco para ocupar a largura total */
+        font-size: 1.4rem; /* Tamanho de fonte menor */
+        margin: 0.5rem 0; /* Margem vertical entre os links */
+        text-align: center;
+    }
+    .icons {
+        display: inline-flex;
+        cursor: pointer;
+        font-size: 2.5rem;
+    }
+
+    #menu-icon, #colse-icon {
+        font-size: 2.5rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+}
+
+/* Ajustes para telas menores que 576px (dispositivos muito pequenos) */
+@media (max-width: 576px) {
+    html {
+        font-size: 55%; /* Diminui a base de tamanho da fonte */
+    }
+
+    .logo {
+        font-size: 2rem; /* Tamanho menor da fonte para o logo */
+    }
+
+    nav a {
+        font-size: 1.2rem; /* Links ainda menores */
+    }
+}
+
+.icons {
+    display: none; /* Ícones ficam escondidos em telas grandes */
+    cursor: pointer;
+}
+
+#menu-icon, #colse-icon {
+    font-size: 2.5rem;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex; /* Exibe ícones em telas pequenas */
+    }
+
+    nav {
+        display: none; /* Esconde a barra de navegação */
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        padding: 2rem 0;
+        transition: 0.3s;
+    }
+
+    #check:checked ~ nav {
+        display: flex; /* Exibe o menu quando o ícone é clicado */
+    }
+
+    nav a {
+        display: block; /* Links em bloco para ocupar a largura total */
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 1rem 0;
+        padding: 0.5rem;
+    }
+
+    .logo {
+        font-size: 2rem; /* Ajusta o tamanho do logo em telas menores */
+    }
+}
