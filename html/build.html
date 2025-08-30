@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        @keyframes loading {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        h1::after {
+            content: '...';
+            animation: loading 1s infinite;
+        }
+        h1::before {
+            content: 'Loading';
+            color: crimson;
+            
+        }
+
+        h1::before, h1::after {
+            display: inline-block;
+        }
+
+        h1::before {
+            margin-right: 0.5rem;
+        }
+        h1::after {
+            margin-left: 0.5rem;
+            color: crimson;
+        }
+        
+        p{
+            margin-top: 1rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Under Construction</h1>
+    <a href="/html/index5.html"></a>
+</body>
+</html>

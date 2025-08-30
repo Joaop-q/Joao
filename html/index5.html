@@ -10,21 +10,45 @@
 </head>
 
 <body>
+
   <header>
     <a href="#" class="logo">João</a>
     <nav aria-label="Main navigation">
       <a href="#" class="active">Home</a>
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#services">Services</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+
+
+    <!--#######  FLOAT BAR #######-->
+
+    <div id="floating-toggle" title="Menu">
+        <img src="/wfloatbar.png" alt="">
+    </div>
+
+    <!--######  HIDDEN FLOAT BAR ######-->
+    <div id="floating-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+
   <main>
-    <!-- Home Section -->
-    <!-- Ensure the home section is accessible with aria-label -->
+    <!--######  HOME SECTION  ######-->
+    <!--#######  SOCIAL MEDIAS #######-->
 
     <section class="home" id="home" aria-label="Home">
       <div class="home-img">
@@ -33,37 +57,53 @@
       <div class="home-content">
         <h1>Hi, it's <span>João</span></h1>
         <h2 class="typing-text">I'm a <br> <span class="animated-text"></span></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        <p>Welcome to my little world...</p>
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/jo%C3%A3o-santos-2b2ba02b6" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
           <a href="https://github.com/Joaop-q" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.instagram.com/joaop_qrz/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
         </div>
-        <a href="#" class="btn">Hire me</a>
+        <a href="https://wa.me/message/JPZGEO53JI6BP1" class="btn" target="_blank">Hire me</a>
       </div>
     </section>
 
-    <!-- About Section -->
-    <!-- Ensure the about section is accessible with aria-label -->
+
+
+    <!--######  ABOUT SECTION  ######-->
+
+    
 
     <section class="about" id="about" aria-label="About Me">
       <div class="content">
         <h2 class="section-title">About Me</h2>
+
         <div class="about-details">
+
           <div class="left">
             <img src="/logow.png" alt="Foto de João">
           </div>
+          
           <div class="right">
-            <h3>I'm Starting Front-End</h3>
-            <p>Since a year ago, I've been studying about technology...</p>
+            <h3>I'm a Fron-End Developer</h3>
+            <p>
+              <span style="color: crimson;">João Pedro Messias dos Santos Queiroz.</span> Brazilian guy, 22 years old, I'm from the state of Amapá, Macapá city, north of Brazil. 
+              I am a Front-End Developer with a passion for creating beautiful and functional websites.
+              I have a strong foundation in HTML, CSS, and JavaScript, and I'm always eager to learn new technologies and improve my skills.
+            </p>
             <a href="/cv.pdf" download><button class="btn">Download</button></a>
           </div>
+
         </div>
+
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <!-- Ensure the skills section is accessible with aria-label -->
+
+
+
+    <!--#######  SKILL SECTION ####### -->
+
+
 
     <section class="skills" id="skills" aria-label="Skills">
       <div class="content">
@@ -71,15 +111,15 @@
         <div class="skills-details">
           <div class="text">
             <h3>Skills Reflect Our Knowledge</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            <p>More than two years writing code for the internet</p>
             <div class="experience">
-              <div class="num">1</div>
+              <div class="num">2</div>
               <div class="exp">Year of Experience</div>
             </div>
           </div>
           <div class="boxes">
             <div class="box"><span>HTML</span><span class="per">70%</span></div>
-            <div class="box"><span>CSS</span><span class="per">40%</span></div>
+            <div class="box"><span>CSS</span><span class="per">50%</span></div>
             <div class="box"><span>JavaScript</span><span class="per">30%</span></div>
             <div class="box"><span>Python</span><span class="per">30%</span></div>
           </div>
@@ -87,57 +127,64 @@
       </div>
     </section>
 
-    <!-- Education Section -->
-    <!-- Ensure the education section is accessible with aria-label -->
+    <!-- Some Works -->
+    <!--####### SERVICES #######-->
 
     <section class="services" id="services" aria-label="Services">
       <div class="content">
         <h2 class="section-title">My Services</h2>
         <div class="boxes">
+
           <div class="box">
             <div class="icon"><i class="fas fa-desktop"></i></div>
-            <h3>Web Development</h3>
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
+            <h3>Açai Manager</h3>
+            <p>A web site that you can get your business organized</p>
           </div>
+
           <div class="box">
-            <div class="icon"><i class="fas fa-paint-brush"></i></div>
-            <h3>Graphic Design</h3>
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
+            <div class="icon"><a href="/html/build.html" target="_blank" rel="noopener noreferrer"> <i class="fas fa-paint-brush"></i> </a></div>
+            <h3>Florença</h3>
+            <p>Women's clothing store...</p>
           </div>
+
           <div class="box">
-            <div class="icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Digital Marketing</h3>
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
+            <div class="icon"> <a href="/html/build.html" target="_blank" rel="noopener noreferrer"> <img src="/principe.png" class="principe" alt=""></a></div>
+            <h3>Principe da Paz</h3>
+            <p>A group of young people that save lifes through the church</p>
           </div>
-          <div class="box">
-            <div class="icon"><i class="fab fa-android"></i></div>
-            <h3>Icon Design</h3>
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-          </div>
+
+            <div class="box">
+              <div class="icon"> <a href="/html/build.html" target="_blank" rel="noopener noreferrer"><img src="/comap.png" alt=""></a> </div>
+              <h3>COMAP</h3>
+              <p>Cooperativa dos Produtores e Agroextrativistas do Estado do Amapá</p>
+            </div>
+          
+          
           <div class="box">
             <div class="icon"><i class="fas fa-camera-retro"></i></div>
             <h3>Photography</h3>
             <p>Lorem ipsum dolor sit amet consectetur...</p>
           </div>
+
           <div class="box">
             <div class="icon"><i class="fas fa-tablet-alt"></i></div>
             <h3>Apps Development</h3>
             <p>Lorem ipsum dolor sit amet consectetur...</p>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Education Section -->
-    <!-- Ensure the education section is accessible with aria-label -->
+    <!--######  CONTACT SECTION ######-->
 
     <section class="contact" id="contact" aria-label="Contact">
       <div class="content">
         <h2 class="section-title">Contact Me</h2>
         <div class="text">
           <h3>Have Any Project?</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-          <a href="#" class="btn">Let's Chat</a>
+          <p>Send me a message on my WhatsApp</p>
+          <a href="https://wa.me/message/JPZGEO53JI6BP1" class="btn" target="_blank">Let's Chat</a>
         </div>
       </div>
     </section>

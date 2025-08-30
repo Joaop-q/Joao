@@ -29,6 +29,101 @@ body {
   height: 100vh;
 }
 
+
+/* Losango flutuante */
+
+
+
+#floating-toggle {
+  display: none;
+  position: fixed;
+  top: 150px; 
+  right: 30;
+  cursor: grab;
+  z-index: 999;
+  transition: transform 0.9s ease ;
+}
+
+#floating-toggle:active {
+  cursor: grabbing;
+}
+
+
+#floating-toggle img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: auto;
+    transition: 0.9s;
+    
+}
+
+#floating-toggle img:hover {
+    transform: scale(1.2);
+}
+
+
+/* Menu lateral pequeno */
+#floating-menu {
+  display: none;
+  position: fixed;
+  top: 120px;
+  left: 30px;
+  background-color: white;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 998;
+  padding: 10px;
+  min-width: 120px;
+  transition: 0.9s ease;
+
+}
+
+#floating-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+}
+
+#floating-menu li {
+  margin: 8px 0;
+  border-left:#111 1px solid;
+  padding-left: 5px;
+  transition: 0.3s ease, ;
+  border-radius: 10px;
+}
+
+#floating-menu li:hover {
+    background-color: black;
+    color: var(--bg-dark);
+}
+
+#floating-menu a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+
+
+@media (max-width: 900px) {
+  nav {
+    display: none; /* Esconde a navbar */
+  }
+
+  #floating-toggle {
+    display: block; /* Mostra o losango */
+  }
+}
+
+
+
+
+
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
@@ -66,12 +161,22 @@ header {
   font-weight: 800;
   text-shadow: 0 0 30px var(--primary-color);
   cursor: pointer;
-  transition: 0.9s ease;
+  transition: 1s ease;
 }
 
 .logo:hover {
   transform: scale(1.2);
 }
+
+#profile-img:hover {
+  transform: scale(1.2);
+}
+
+
+#profile-img {
+  transition: 0.9s ease;
+}
+
 
 nav a {
   font-size: 1.8rem;
@@ -79,6 +184,8 @@ nav a {
   margin-left: 4rem;
   transition: 0.5s ease;
   border-bottom: 3px solid transparent;
+  background-color: black;
+  border-radius: 30%;
 }
 
 nav a:hover,
@@ -116,87 +223,7 @@ span {
   text-shadow: 0 0 30px var(--primary-color);
 }
 
-/*Animação das palavras*/
 
-.typing-text{
-    font-size: 34px;
-    font-weight: 600;
-    min-width: 280px;
-}
-
-.animated-text {
-    display: inline-block;
-    position: relative;
-    padding-left: 8px;
-    min-width: 180px;
-    text-align: center;
-}
-
-.animated-text::before {
-    content: "Software Developer";
-    color: #b74b4b;
-    animation: words 20s infinite steps(1, end);
-}
-
-.animated-text::after {
-    content: "";
-    position: absolute;
-    right: -6px;
-    top: 0;
-    height: 100%;
-    width: 2px;
-    background-color: #b74b4b;
-    animation: cursor 0.6s steps(1, end) infinite;
-}
-
-
-
-.typing-text span{
-    position: relative;
-    text-align: right;
-}
-
-.typing-text span::before {
-    content: "Software Developer";
-    color: var(--primary-color);
-    animation: words 20s infinite;
-}
-
-.typing-text span::after {
-    content: "";
-    background-color: transparent;
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid black;
-    right: -8px;
-    animation: cursor 1s infinite;
-
-}
-
-@keyframes cursor {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    to {
-        border-right: 3px solid var(--primary-color);
-    }
-}
-
-@keyframes words {
-  0%, 20% {content: "Web Developer";}
-
-  21%, 40% {content: "JavaScript Coder";}
-
-  41%, 60% {content: "Web Designer";}
-
-  61%, 80% {content: "Farmer";}
-
-  81%, 100% {content: "Follower of Jesus";}
-}
 
 /* Home */
 .home {
@@ -234,6 +261,7 @@ span {
 
 .home-content p {
   font-size: 1.6rem;
+  margin-bottom: 1rem;
 }
 
 .social-icons a {
@@ -254,6 +282,88 @@ span {
   background-color: var(--primary-color);
   color: var(--bg-dark);
   transform: scale(1.2);
+}
+
+/*Animação das palavras*/
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animated-text {
+    display: inline-block;
+    position: relative;
+    /*padding-left: 8px;*/
+    min-width: 18ch; /*Aumentei para não mover a section home*/
+    text-align: center;
+    white-space: nowrap;
+}
+
+.animated-text::before {
+    content: "";
+    color: #b74b4b;
+    animation: words 20s infinite steps(1, end);
+}
+
+.animated-text::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #b74b4b;
+    animation: cursor 0.6s steps(1, end) infinite;
+}
+
+
+
+.typing-text span{
+    position: relative;
+    text-align: left;
+}
+
+.typing-text span::before {
+    content: "";
+    color: var(--primary-color);
+    animation: words 20s infinite;
+}
+
+.typing-text span::after {
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-right: 3px solid black;
+    right: -8px;
+    animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        border-right: 3px solid var(--primary-color);
+    }
+}
+
+@keyframes words {
+  0%, 20% {content: "Web Developer";}
+
+  21%, 40% {content: "JavaScript Coder";}
+
+  41%, 60% {content: "Web Designer";}
+
+  61%, 80% {content: "Farmer";}
+
+  81%, 100% {content: "Follower of Jesus";}
 }
 
 /* Botão */
@@ -284,8 +394,8 @@ span {
 }
 
 .about-details .left img {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -303,6 +413,7 @@ span {
   font-size: 1.5rem;
   text-align: justify;
 }
+
 
 /* Skills */
 .skills-details {
@@ -357,7 +468,7 @@ span {
 .services .box {
   width: calc(33% - 1.5rem);
   background: #111;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 12px;
   text-align: center;
   transition: 0.3s ease;
@@ -370,12 +481,21 @@ span {
 
 .services .icon {
   font-size: 2rem;
-  background: var(--primary-color);
   color: var(--text-light);
+  /*background-color: var(--primary-color);*/
   border-radius: 50%;
   padding: 1rem;
   margin-bottom: 1rem;
   display: inline-block;
+}
+
+.icon img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0px;
+  padding: 0px;
 }
 
 /* Contact */
@@ -409,19 +529,11 @@ footer {
         font-size: 55%;
     }
     header {
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
+        position: relative;
+        align-items: left;
     }
 
-    nav{
-        margin-top: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        
-    }
-
+    
     .home{
         flex-direction: column;
         gap: 4rem;
@@ -430,6 +542,11 @@ footer {
 
     .home-img img {
         width: 60vw;
+    }
+
+    .typing-text span{
+        min-width: 100%; /**/
+        text-align: center;
     }
 
     .about-details,
